@@ -1,8 +1,73 @@
 <!DOCTYPE html>
+<html lang="pl">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputerowe Części</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        #komputer {
+            position: relative;
+        }
+        .czesc {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+        .czesc:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+    </style>
 </head>
+<body>
+
+<div id="komputer">
+    <img src="komputer.png" alt="Komputer" usemap="#mapa_komputera" style="max-width: 100%;">
+    <map name="mapa_komputera">
+        <area shape="rect" coords="100,100,200,200" alt="Procesor" title="Procesor">
+        <area shape="rect" coords="300,100,400,200" alt="Karta graficzna" title="Karta graficzna">
+        <area shape="rect" coords="500,100,600,200" alt="Pamięć RAM" title="Pamięć RAM">
+        <!-- Dodaj więcej obszarów dla innych części komputera -->
+    </map>
+    <div id="info_procesor" class="czesc">
+        <h2>Procesor</h2>
+        <p>Tutaj znajdą się informacje o procesorze.</p>
+    </div>
+    <div id="info_karta_graficzna" class="czesc">
+        <h2>Karta graficzna</h2>
+        <p>Tutaj znajdą się informacje o karcie graficznej.</p>
+    </div>
+    <div id="info_pamiec_ram" class="czesc">
+        <h2>Pamięć RAM</h2>
+        <p>Tutaj znajdą się informacje o pamięci RAM.</p>
+    </div>
+    <!-- Dodaj więcej divów z informacjami dla innych części komputera -->
+</div>
+
 <script>
-    if (1==1){}
+    const czesciKomputera = document.querySelectorAll('.czesc');
+    document.querySelector('map').addEventListener('click', function(event) {
+        czesciKomputera.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        const targetId = event.target.getAttribute('alt');
+        const infoElement = document.getElementById('info_' + targetId.toLowerCase().replace(/\s/g, '_'));
+        if (infoElement) {
+            infoElement.style.display = 'block';
+        }
+    });
 </script>
 
+</body>
+</html>
