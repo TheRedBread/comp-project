@@ -9,6 +9,14 @@ body {
     background-color: #dac6c6;
 }
 
+.parts{
+    background-color: aquamarine;
+    clip-path:polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
+}
+.parts:hover{
+    background-color: aqua;
+}
+
 
 .czesc {
 
