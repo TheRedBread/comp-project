@@ -9,16 +9,6 @@
 
 <script>
 
-    var infoPr = '<a>info Procesor</a>';
-    var infoG = '<a>info GPU</a>    '
-
-    function info(winfo) {
-        var infoTab = document.getElementById("info");
-        console.log('ala')
-        infoTab.innerHTML = winfo;
-
-    }
-
 
 </script>
 
@@ -26,28 +16,107 @@
 
 
 <body>
+    
+    <table>
+        <!--szereg opisu-->
+        <tr>
+            <td>
+                CPU
+            </td>
+            <td>
+                RAM
+            </td>
+            <td>
+                Motherboard
+            </td>
+            <td>
+                CPU cooler
+            </td>
+            <td>
+                Power supply unit
+            </td>
+            <td>
+                GPU
+            </td>
+            <td>
+                Hard drive
+            </td>
+        </tr>
 
-<div id="komputer">
-    <img src="komputer.png" alt="Komputer" usemap="#mapa_komputera" style="max-width: 100%;">
-    <map name="mapa_komputera">
-        <area shape="rect" coords="100,100,200,200" alt="Procesor" title="Procesor">
-        <area shape="rect" coords="300,100,400,200" alt="Karta graficzna" title="Karta graficzna">
-        <area shape="rect" coords="500,100,600,200" alt="Pamięć RAM" title="Pamięć RAM">
 
 
+        <tr>
+            <td>
+                <div>
+                    <select>
+                        <option>
+                            
+                        </option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <select>
+                        <option>
+                            
+                        </option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <select>
+                        <option>
+                            
+                        </option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <select>
+                        <option>
+                            
+                        </option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <select>
+                        <option>
+                            
+                        </option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <select>
+                        <option>
+                            
+                        </option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <select>
+                        <option>
+                            
+                        </option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        
 
-        <img src="Gpux.webp" width="170" height="100" onclick="info(infoG)" class="parts">
-        <img src="CPu8.png" width="100" height="100" onclick="info(infoPr)"" class="parts"> <!-- Tu są podzespoły -->
-
-        <!-- Dodaj więcej obszarów dla innych części komputera -->
-    </map>
-
-</div>
-
-<div id="info" class="czesc"> <!--jedno okienko info -->
-
-
-</div>
+        <tr>
+            <td colspan="7"><button>podsumuj</button></td>
+        </tr>
+    
+    </table>
 
 
 

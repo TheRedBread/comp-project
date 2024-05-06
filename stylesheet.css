@@ -1,29 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+    padding: 10pt;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #dac6c6;
 }
-
-.parts{
-    background-color: aquamarine;
-    clip-path:polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
+table{
+    border-color: black;
+    border-style: solid;
+    border-collapse: collapse;
+    padding: 10pt;
 }
-.parts:hover{
-    background-color: aqua;
+td{
+    width: 80pt;
+    height: 15pt;
+    border-color: black;
+    border-style: solid;
+    border-collapse: collapse;
+    padding: 10pt;
+    
 }
 
 
-.czesc {
-
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border: 1px solid #5e1c1c;
-}
-.czesc:hover {
-    background-color: rgba(255, 255, 255, 1);
-}
