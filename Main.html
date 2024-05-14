@@ -8,6 +8,84 @@
 </head>
 
 <script>
+    const CPUMatrix = [
+        ["Intel Core i5-10400F", 459.0],
+        ["AMD Ryzen 5 4500", 308.0],
+        ["AMD Ryzen 9 7950X", 2499.0]
+    ]
+    
+
+    
+    
+    
+    function add_options(){
+
+        for (var i = 0; i < 3; i++){
+            document.getElementById("iCPU").innerHTML += "<option>"+ CPUMatrix[i][0].toString() + "</option>"
+        }
+    }
+    
+    
+    function getElementCoord(val, arr){
+        var arrLenght = 0;
+        for (var i in arr){
+            arrLenght = i;
+        }
+        
+
+
+        
+
+        console.log(arrLenght)
+        
+        for (var y = 0; y < arrLenght; y++){
+            var arryLenght =0;
+
+            for (var i in arr[y]){
+                arryLenght[y]= i;
+                console.log(arryLenght[y])
+            }
+
+            
+            for(var x = 0; x < arr[y].lenght; x++){
+
+                console.log(x.toString+"  "+y.toString)
+
+                if (arr[y][x] = val){
+                    console.log(y.toString + "  "+ x.toString)
+                    return [y ,x]
+                }
+
+            }
+
+        }
+
+
+
+    }
+
+
+
+    function sum(){
+        var suma = 0.0;
+        /**CPU***********************/
+        var CPUcord = getElementCoord(document.getElementById("iCPU").value.toString, CPUMatrix);
+        suma += CPUMatrix[CPUcord[0]][CPUcord[1]];
+
+
+
+
+
+
+        document.getElementById("suma").innerHTML
+
+
+    }
+
+
+
+
+
 
 
 </script>
@@ -48,10 +126,7 @@
         <tr>
             <td>
                 <div>
-                    <select>
-                        <option>
-                            
-                        </option>
+                    <select id="iCPU">
                     </select>
                 </div>
             </td>
@@ -113,10 +188,16 @@
         
 
         <tr>
-            <td colspan="7"><button>podsumuj</button></td>
+            <td colspan="6"><button onclick="sum()">podsumuj</button></td>
+            <td id="suma"></td>
         </tr>
     
     </table>
+
+
+    <script>
+        add_options()
+    </script>
 
 
 
