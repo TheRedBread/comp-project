@@ -8,7 +8,7 @@
 </head>
 
 <script>
-    const CPUMatrix = {
+    var CPUMatrix = {
         "Intel Core i5-10400F"  : 459.0,
         "AMD Ryzen 5 4500"      : 308.0,
         "AMD Ryzen 9 7950X"     : 2499.0
@@ -19,54 +19,28 @@
     
     
     function add_options(){
-
-        for (var i = 0; i < 3; i++){
-            document.getElementById("iCPU").innerHTML += "<option>"+ CPUMatrix.get(1).toString() + "</option>"
+        for (keys in CPUMatrix){
+            document.getElementById("iCPU").innerHTML += "<option>"+ keys + "</option>"
         }
     }
     
     
-    function getElementCoord(val, arr){
-        console.log(arr)
 
-        
-        for (var y = 0; y < arr.lenght; y++){
-            
-
-            
-            for(var x = 0; x < arr[y].lenght; x++){
-
-                console.log(x.toString+"  "+y.toString)
-
-                if (arr[y][x] = val){
-                    console.log(y.toString + "  "+ x.toString)
-                    return [y ,x]
-                }
-
-            }
-
-        }
-
-
-
-    }
 
 
 
     function sum(){
         var suma = 0.0;
         /**CPU***********************/
-        console.log(CPUMatrix)
-        var CPUcord = getElementCoord.apply(document.getElementById("iCPU").value.toString, CPUMatrix);
-        console.log(CPUcord)
-        suma += CPUMatrix[CPUcord[0]][CPUcord[1]];
+        
+        suma += CPUMatrix[document.getElementById("iCPU").value];
+
+
+        console.log(suma)
 
 
 
-
-
-
-        document.getElementById("suma").innerHTML
+        document.getElementById("suma").innerHTML = suma.toString() + "zł"
 
 
     }
