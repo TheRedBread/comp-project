@@ -8,13 +8,24 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 24px;
+        }
+        .container {
             margin: 20px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
         }
-        td {
+        td, th {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
@@ -26,10 +37,8 @@
             background-color: #ddd;
         }
         th {
-            padding: 12px;
             background-color: #4CAF50;
             color: white;
-            text-align: center;
         }
         select {
             width: 100%;
@@ -51,73 +60,78 @@
     </style>
 </head>
 <body>
-    
-    <table>
-        <tr>
-            <th>CPU</th>
-            <th>RAM</th>
-            <th>Motherboard</th>
-            <th>CPU cooler</th>
-            <th>Power supply unit</th>
-            <th>GPU</th>
-            <th>Hard drive</th>
-        </tr>
-        <tr>
-            <td>
-                <div>
-                    <select id="iCPU">
-                    </select>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <select>
-                        <option></option>
-                    </select>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <select>
-                        <option></option>
-                    </select>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <select>
-                        <option></option>
-                    </select>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <select>
-                        <option></option>
-                    </select>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <select>
-                        <option></option>
-                    </select>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <select>
-                        <option></option>
-                    </select>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="6"><button onclick="sum()">Podsumuj</button></td>
-            <td id="suma"></td>
-        </tr>
-    </table>
-
+    <div class="header">
+        <img src="logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
+        Komputerowe Części
+    </div>
+    <div class="container">
+        <table>
+            <tr>
+                <th>CPU</th>
+                <th>RAM</th>
+                <th>Motherboard</th>
+                <th>CPU cooler</th>
+                <th>Power supply unit</th>
+                <th>GPU</th>
+                <th>Hard drive</th>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <select id="iCPU"></select>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <select>
+                            <option></option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <select>
+                            <option></option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <select>
+                            <option></option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <select>
+                            <option></option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <select>
+                            <option></option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <select>
+                            <option></option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <button onclick="sum()">Podsumuj</button>
+                </td>
+                <td id="suma"></td>
+            </tr>
+        </table>
+    </div>
     <script>
         var CPUMatrix = {
             "Intel Core i5-10400F": 459.0,
