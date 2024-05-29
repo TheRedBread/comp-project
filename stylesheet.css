@@ -11,6 +11,7 @@ table{
     border-style: solid;
     border-collapse: collapse;
     padding: 10pt;
+    width: 100%;
 }
 td{
     width: 80pt;
@@ -21,5 +22,60 @@ td{
     padding: 10pt;
     
 }
-
-
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 24px;
+}
+.container {
+    margin: 20px;
+}
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #ddd;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+    position: relative; /* Required for the image tooltip */
+}
+th img {
+    display: none; /* Hide the image initially */
+    position: absolute;
+    top: 100%; /* Position below the text */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #ddd;
+    background-color: white;
+    padding: 5px;
+    z-index: 1; /* Ensure the image is above other content */
+}
+th:hover img {
+    display: block; /* Show the image on hover */
+}
+select {
+    width: 100%;
+    padding: 5px;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+#suma {
+    font-weight: bold;
+}
