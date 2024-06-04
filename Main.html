@@ -1,3 +1,100 @@
+
+    <!DOCTYPE html>
+    <html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Komputerowe Części</title>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <div class="header">
+            <img src="favicon.png" alt="Logo" style="height: 40px; vertical-align: middle;">
+            Komputerowe Części
+        </div>
+        <div class="container">
+            <table>
+                <tr>
+                    <th>
+                        CPU
+                        <img src="CPu8.png" alt="CPU Image">
+                    </th>
+                    <th>RAM</th>
+                    <th>Motherboard</th>
+                    <th>CPU cooler</th>
+                    <th>Power supply unit</th>
+                    <th>GPU</th>
+                    <th>Hard drive</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <select id="iCPU"></select>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <select>
+                                <option></option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <select>
+                                <option></option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <select>
+                                <option></option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <select>
+                                <option></option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <select>
+                                <option></option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <select>
+                                <option></option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <button onclick="sum()">Podsumuj</button>
+                    </td>
+                    <td id="suma"></td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            var CPUMatrix = {
+                "Intel Core i5-10400F": 459.0,
+                "AMD Ryzen 5 4500": 308.0,
+                "AMD Ryzen 9 7950X": 2499.0
+            };
+    
+            function add_options() {
+                for (var key in CPUMatrix) {
+                    document.getElementById("iCPU").innerHTML += "<option>" + key + "</option>";
+                }
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -186,16 +283,16 @@
         function add_options() {
             for (var key in CPUMatrix) {
                 document.getElementById("iCPU").innerHTML += "<option>" + key + "</option>";
+
             }
-        }
-
-        function sum() {
-            var suma = 0.0;
-            suma += CPUMatrix[document.getElementById("iCPU").value] || 0;
-            document.getElementById("suma").innerHTML = suma.toFixed(2) + " zł";
-        }
-
-        add_options();
-    </script>
-</body>
-</html>
+    
+            function sum() {
+                var suma = 0.0;
+                suma += CPUMatrix[document.getElementById("iCPU").value] || 0;
+                document.getElementById("suma").innerHTML = suma.toFixed(2) + " zł";
+            }
+    
+            add_options();
+        </script>
+    </body>
+    </html>
